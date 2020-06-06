@@ -39,8 +39,9 @@ public
 
 		if(node == null)
 			return;
-		if(node.komuch.text.length() == 1)
+		if(node.leftSon == null && node.rightSon == null)
 			list.add(node.komuch);
+
 		preOrder(node.leftSon,list);
 		preOrder(node.rightSon,list);
 

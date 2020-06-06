@@ -1,6 +1,7 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Arrays;
 
 public
 	class Komuch
@@ -39,6 +40,7 @@ public
 			for (line = reader.readLine(); line != null; line = reader.readLine()) {
 
 				String[] split = line.split(" ");
+				System.out.println(Arrays.toString(split));
 				komuches[op] = new Komuch(Integer.parseInt(split[1]),split[0]);
 				++op;
 			}
