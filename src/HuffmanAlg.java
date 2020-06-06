@@ -1,7 +1,7 @@
 public
 	class HuffmanAlg {
 
-	static public void execute(Komuch[] komuches){
+	static public BinaryTree execute(Komuch[] komuches){
 
 		Queue q = prepareKomuchs(komuches);
 		System.out.println(q);
@@ -24,14 +24,16 @@ public
 
 			BinaryTree treeN = new BinaryTree(new Node(merged));
 			treeN.root.leftSon = treeF.root;
+			treeF.root.addAsLeft(treeN.root);
 			treeN.root.rightSon = treeS.root;
+			treeS.root.addAsRight(treeN.root);
 			q.put(treeN);
 			System.out.println(q);
 			System.out.println("================================================\n\n");
 
 		}
 
-		System.out.println(q.first.tree);
+		return q.first.tree;
 	}
 
 	private static Queue prepareKomuchs(Komuch[] komuches) {

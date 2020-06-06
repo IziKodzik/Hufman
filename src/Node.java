@@ -36,9 +36,10 @@ public
 
 		this.komuch.code = addToBeginning(this.komuch.code,"0");
 
-		parent.leftSon = this;
 		if(this.leftSon != null)
-			this.leftSon.leftSon.addAsLeft(this);
+			this.leftSon.addAsLeft(this);
+		if(this.rightSon != null)
+			this.rightSon.addAsLeft(this);
 
 	}
 
@@ -46,9 +47,11 @@ public
 
 		this.komuch.code = addToBeginning(this.komuch.code,"1");
 
-		parent.rightSon = this;
-		if(rightSon != null)
-			rightSon.rightSon.addAsRight(this);
+
+		if(this.leftSon != null)
+			this.leftSon.addAsRight(this);
+		if(this.rightSon != null)
+			this.rightSon.addAsRight(this);
 
 	}
 

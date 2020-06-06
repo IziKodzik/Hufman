@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.List;
 
 public
 	class Main {
@@ -9,7 +10,11 @@ public
 
 		Komuch[] komuches = Komuch.createKomuches("huffman.txt");
 		Arrays.sort(komuches);
-		HuffmanAlg.execute(komuches);
+		BinaryTree tree = HuffmanAlg.execute(komuches);
+		System.out.println(tree);
+		List<Komuch> list = tree.getPrefixesAsList();
+		System.out.println("===== Komuchy =====");
+		System.out.println(list);
 
 	}
 
